@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+<link rel="shortcut icon" href="https://cdn.pixabay.com/photo/2023/10/23/13/20/abstract-8336084_1280.png">
+
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conhece ARTE?</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Galada&family=Vina+Sans&display=swap" rel="stylesheet">
+   
+</head>
+
+<body>
+    <div class="quiz-container">
+        <h1>Quiz ARTÍSTICO</h1>
+        <div id="pergunta"></div>
+        <div id="opcoes"></div>
+        <div id="resultado"></div>
+    </div>
+
+    <script>
+
+        const perguntas = [
+            {
+                pergunta: "Quais dessas respostas são consideradas arte?",
+                opcoes: ["Jogar", "Pintura", "Comer", "Cantar"],
+                resposta: "Pintura"
+            },
+
+            {
+                pergunta: "Quais dessas respostas são consideradas arte?",
+                opcoes: ["Caminhar", "Escultura", "Dormir", "Correr"],
+                resposta: "Escultura"
+            },
+
+            {
+                pergunta: "Quais dessas respostas são consideradas arte?",
+                opcoes: ["Falar", "Comer", "Caminhar", "Música"],
+                resposta: "Música"
+            }
+
+            // adicione mais perguntas aqui
+        ];
+
+        const perguntaElemento = document.getElementById("pergunta");
+        const opcoesElemento = document.getElementById("opcoes");
+        const resultadoElemento = document.getElementById("resultado");
+
+        let indicePerguntaAtual = 0;
+
+        function carregarPergunta() {
+            const perguntaAtual = perguntas[indicePerguntaAtual];
+            perguntaElemento.textContent = perguntaAtual.pergunta;
+
+            opcoesElemento.innerHTML = "",
+                perguntaAtual.opcoes.forEach(opcao => {
+                    const botao = document.createElement("button");
+                    botao.textContent = opcao;
+                    botao.addEventListener("click", () => verificarResposta(opcao));
+                    opcoesElemento.appendChild(botao);
+                });
+        }
+
+        function verificarResposta(respostaSelecionada) {
+            const perguntaAtual = perguntas[indicePerguntaAtual];
+            if (respostaSelecionada === perguntaAtual.resposta) {
+                resultadoElemento.textContent = "Resposta correta!";
+                resultadoElemento.className = "correto";
+            } else {
+                resultadoElemento.textContent = "Resposta incorreta. A resposta correta é: " + perguntaAtual.resposta;
+                resultadoElemento.className = "incorreto";
+            }
+
+            // avança para a proxima pergunta ou finaliza o quiz
+
+            indicePerguntaAtual++;
+            if (indicePerguntaAtual < perguntas.length) {
+                setTimeout(carregarPergunta, 2000);  //carrega proxima pergunta apos 2 segundos
+            }
+
+            else {
+                resultadoElemento.textContent = "Quiz concluido!";
+                resultadoElemento.className = "";
+            }
+        }
+
+            //carrega a primeira pergunta quando a pagina carrega
+            carregarPergunta();
+
+
+    </script>
+
+<h3> Desenvolvido por FROZ <br> Programação WEB|IOS <br>@IamFROZ_</h3>
+
+</body>
+
+</html>

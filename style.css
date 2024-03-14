@@ -1,0 +1,90 @@
+@charset "utf-8";
+
+*{
+    padding: 4px 4px 4px 4px;
+}
+
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    background-image: url(https://cdn.pixabay.com/photo/2021/02/24/09/51/woman-6046019_1280.jpg);
+}
+
+.quiz-container {
+    max-width: 600px;
+    margin: 0 auto;
+    color: white;
+    text-shadow: rgb(0, 0, 0) 2px 2px 2px;
+    font-size: 30px;
+    font-family: "Galada", cursive;
+    
+}
+
+#opcoes {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    font-family: "Galada", cursive;
+}
+
+h1{
+    color: white;
+    text-shadow: rgb(0, 0, 0) 2px 2px 2px;
+    border: solid rgb(255, 255, 255) 2px;
+    border-radius: 50px;
+    background-color: rgb(110, 20, 20);
+    font-size: 40px;
+    box-shadow: rgb(255, 255, 255) 3px 3px 2px;
+}
+
+h3{
+    color: rgb(255, 81, 0);
+    text-shadow: rgb(0, 0, 0) 2px 2px 0px;
+    font-size: 20px;
+    font-family: "Galada", cursive;
+    margin-top: 10%;
+    margin-left: 65%;
+}
+
+#pergunta{
+    color: white;
+    text-shadow: rgb(0, 0, 0) 2px 2px 2px;
+    border: solid white 2px;
+    border-radius: 50px;
+    background-color: rgb(110, 20, 20);
+    font-size: 35px;
+    box-shadow: white 3px 3px 2px;
+    font-family: "Galada", cursive;
+}
+
+
+button {
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    background-color: rgb(110, 20, 20);
+    color: white;
+    text-shadow: rgb(0, 0, 0) 1px 1px 1px;
+    border: solid white 2px;
+    border-radius: 50px;
+    box-shadow: white 3px 3px 2px;
+    font-family: "Galada", cursive;
+    margin-top: 5%;
+}
+
+.correto {
+    background-color: #8bc34a;
+}
+
+.incorreto {
+    background-color: #ff5722;
+}
+
+#resultado{
+    font-size: 50px;
+    border-radius: 30px;
+    padding: 2px 2px 2px 2px;
+}
+
